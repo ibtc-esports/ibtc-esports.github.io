@@ -1,0 +1,231 @@
+/* GENERAL STUFF */
+
+/* Variablen */
+:root{
+    --logoSize: 500%;
+    --logoYOffset: 25%;
+    --scaleSize: 1.03;
+    --transitionTime: 0.2s;
+    --FontSize: 50px;
+    }
+  
+  body{
+    background-color: #dddddd;
+  }
+
+  
+  .landing-header{
+    font-family: "Bebas Neue", "sans-serif";
+    font-size: 6rem;
+    color: #1b191a;
+    text-align: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 100px;
+  }
+  
+  .landing-sub-header{
+    font-family: "Bebas Neue", "sans-serif";
+    font-size: 3rem;
+    color: #1b191a;
+  
+    text-align: center;
+    padding: 0px;
+    margin-bottom: 6rem;
+    margin-top: -2rem;
+  }
+
+  .welcome_banner{
+    width:20vw;
+    margin-top: -100px;
+    margin-left: -25vw;
+    margin-bottom: -20vh;
+    transform: scale(0.248);
+  }
+  
+  .section-header{
+    font-family: "Bebas Neue", "sans-serif";
+    font-size: 3rem;
+    color: #272526;
+  
+    text-align: center;
+    padding: 0px;
+    margin-top: 4rem;
+    margin-bottom: 0rem;
+  }
+  
+  
+  .twitch div{
+    margin-left: 1%;
+    display: block;
+    width: 98%;
+  }
+  
+  
+  .jersey img{
+    margin-left: 5%;
+    border-radius: 1rem;
+    display: block;
+    width: 90%;
+  }
+  
+  footer{
+    justify-content: center;
+    text-align: center;
+  }
+  
+
+  
+    /* TEAMS */
+  
+  
+    .team_grid{
+      border-radius: 20px;
+      color:white;
+      font-family: "Bebas Neue", sans-serif;
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      gap: 8px;
+      height: 35vh;
+    }
+    
+    .team_grid a{
+      color: white;
+      text-decoration: none;
+    }
+  
+    @media only screen and (max-width: 600px) {
+      .team_grid{
+        border-radius: 20px;
+        color:white;
+        font-family: "Bebas Neue", sans-serif;
+        width: 98%;
+        margin-top: 0px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        gap: 0.25rem;
+        height: 35vh;
+      }
+    }
+  
+    .grid-item{
+      background-color: #000000;
+      background-size: var(--logoSize);
+      background-repeat: no-repeat;
+      transition: var(--transitionTime);
+      position: relative;
+      text-align: center;
+      font-size: var(--FontSize);
+    }
+  
+    .grid-itemA{
+      border-radius: 20px 0px 0px 20px;
+    }
+    
+    .grid-itemA:before{
+      content: 'IBTC';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    
+    .grid-itemB:before{
+      content: 'IBTY';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    
+    .grid-itemC:before{
+      content: 'IBTP';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .grid-itemD:before{
+      content: 'ICE';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .grid-itemE{
+      border-radius: 0px 20px 20px 0px;
+    }
+    
+    .grid-itemE:before{
+      content: 'FF';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .grid-itemA:hover, .grid-itemB:hover, .grid-itemC:hover, .grid-itemD:hover, .grid-itemE:hover{
+      cursor: pointer;
+      transform: scale(var(--scaleSize));
+      transition: var(--transitionTime);
+    }
+  
+  
+  /* SPLIT RESULTS */
+  
+  .split-results{
+    font-family: "Roboto condensed", serif;
+    font-size: 1.5rem;
+    display: block;
+    margin-left: 1%;
+    width: 98%;
+  }
+  
+  .split-results table{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .split-header{
+    font-family: "Bebas Neue", "sans-serif";
+    font-size: 2rem;
+    color: #000000;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  
+  
+  table {
+    border-collapse: collapse; /* Zusammenführen der Zellenrahmen */
+  }
+  
+  th, td {
+    border: 1px solid #cd295d; /* Standardrahmen für Zellen */
+  }
+  
+  /* Entferne die spezifischen Ränder für die äußersten Zellen */
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+  
+  th:last-child, td:last-child {
+    border-right: none;
+  }
+  
+  tr:first-child th {
+    border-top: none;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }

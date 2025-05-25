@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBTC E-Sports</title>
+
+        <!-- FONTS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+        
+        <!-- ICONS -->
+        <link rel="icon" type="image/x-icon" href="/media/Logos/IBTC_Logo_full_clear_white.png">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/desktop/css/index.css" />
+        <link rel="stylesheet" href="/desktop/css/cookieBanner.css" />
+        <link rel="stylesheet" href="/desktop/css/navbar.css" />
+        <link rel="stylesheet" href="/desktop/css/footer.css" />
+        
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <!-- SCRIPTS -->
+        <script src="/desktop/scripts/cookies.js"></script> 
+        <script src="/desktop/scripts/appearance.js"></script>
+        <script src="/desktop/scripts/navbar.js"></script>
+        <script src="/desktop/scripts/index.js"></script>
+
+            <!-- VIEWPORT CHECK -->
+    <script>
+        if (window.innerWidth <= 600) { 
+            window.location.href = "/index.html"; 
+        }
+    </script>
+
+</head>
+<body>
+
+<!-- Cookies / Local Storage Banner -->
+<div class="cookieBackground">
+    <div class="cookieContainer">
+        <h2 class="cookieHeader">Bevor Sie fortfahren</h2>
+        <p class="cookieText">
+            Wir speichern Daten, um sicherzustellen, dass die Webseite einwandfrei funktioniert.
+        </p>
+        <p class="cookieText">
+            Unter anderem speichern wir Ihre Erscheinungspräferenzen (Dunkles/Helles Design)
+            sowie das Ergebnis dieser Einstellung, damit Sie, sofern Sie zustimmen, nicht jedes Mal erneut entscheiden müssen.
+        </p>
+        <div class="cookieOption">
+            <span class="cookieLabel">Ich akzeptiere das Speichern der Erscheinungspräferenz:</span>
+            <label class="switch">
+                <input type="checkbox" id="savePreference" aria-label="Erscheinungspräferenz speichern">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="cookieOption">
+            <span class="cookieLabel">Ich möchte beim nächsten Besuch erneut dieses Fenster sehen:</span>
+            <label class="switch">
+                <input type="checkbox" checked id="showCookieWindow" aria-label="Dieses Fenster erneut anzeigen">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <button class="cookieButton" type="button" onclick="saveCookies(document.getElementById('savePreference').checked, document.getElementById('showCookieWindow').checked)">Speichern</button>
+        <footer class="cookieFooter">
+            <a class="cookieA" href="/desktop/datenschutzerklärung.html">Datenschutzerklärung</a>
+            
+            <a class="cookieA" href="/desktop/impressum.html">Impressum</a>
+        </footer>
+    </div>
+</div>
+
+ <nav class="navbar"></nav>
+
+<main>
+<div class="welcome_banner" style="margin-top: -5vh;">
+    <video style="max-width: 100vw" autoplay muted loop>
+        <source src="/media/IBTC_Website_Banner.mov">
+    </video>
+</div>
+
+
+<!-- WIP Banner -->
+<div><h1 class="landing-header">Work in progress</h1></div>
+
+<!-- Twitch Player & Jersey -->
+<div class="twitch_jersey">
+
+        <div id="twitch-embed" style="border-radius: 16px;overflow: hidden;"></div>
+        <script src="https://embed.twitch.tv/embed/v1.js"></script>
+        <script type="text/javascript">
+            new Twitch.Embed("twitch-embed", {
+            width: "720",
+            height: "480",
+            layout: "video",
+            autoplay: "false",
+            channel: "ibtc_esports",
+            parent: ["localhost"]
+            });
+        </script>
+
+        <div style="border-radius: 16px; height: 480px; width: 400px; transform: translate(20px,0px); overflow: hidden;">
+            <a href="https://teams.spized.com/ibtc"><img id="jerseyImage" src="/media/Jersey/Jersey1.png" style="position: relative; transform:scale(0.6); bottom: 35%; right: 38%;"/></a>
+        </div>
+        <script>
+            const images= [
+                "/media/Jersey/Jersey1.png",
+                "/media/Jersey/Jersey2.png",
+                "/media/Jersey/Jersey3.png",
+                "/media/Jersey/Jersey4.png"
+            ];
+            let currentIndex = 0;
+            
+            function changeImage(){
+                currentIndex = (currentIndex + 1) % images.length;
+                document.getElementById("jerseyImage").src = images[currentIndex];
+            }
+
+            setInterval(changeImage,10000);
+            console.log("Bildwechsel!");
+        </script>
+    </div>
+
+<!-- Split Results Overview -->
+    <a class="splitResultsContainer" id="splitResults"></a>
+
+<!-- Team selection -->
+<h1 class="header">Unsere Teams</h1> 
+<div class="teamGrid" id="teamSelection"></div>
+<br>
+</main>
+
+<footer>
+    <a href="datenschutzerklärung.html">Datenschutzerklärung</a>
+    <a href="kochstube.html">Made by Force_of_Yannick</a>
+</footer>
+</body>
+</html>

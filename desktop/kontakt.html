@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>IBT Challenger</title>
+
+        <!-- FONTS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+        
+        <!-- ICONS -->
+        <link rel="icon" type="image/x-icon" href="/media/Logos/IBTC_Logo_full_clear_white.png">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="/desktop/css/navbar.css" />
+        <link rel="stylesheet" href="/desktop/css/kontakt.css" />
+        
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <!-- SCRIPTS -->
+        <script src="/desktop/scripts/apperance.js"></script> 
+        <script src="/desktop/scripts/navbar.js"></script>
+        <script src="/desktop/scripts/kontakt.js"></script>
+
+                    <!-- VIEWPORT CHECK -->
+                    <script>
+                        if (window.innerWidth <= 600) { 
+                            window.location.href = "/mobile/kontakt.html"; 
+                        }
+                    </script>
+</head>
+<body>
+    <nav class="navbar"></nav>
+    <div class="content"> 
+        <h1>
+          Kontakt 
+        </h1>
+        <div class="container">
+            <p>Du möchstest dich als <span>Spieler</span> bewerben oder als <span>Sponsor</span> in Kontakt treten?</p>
+            <p style="margin-top: -1.7rem;">Dann schreib uns gerne eine <span>E-Mail</span> oder melde dich per <span>Discord</span>.</p>
+            <p class="copyInfo">(Durch klicken kopieren)</p>
+            <br />
+                <img class="icon" src="/media/Icons/mail_white.png" alt="Email">
+                <span id="mail" onclick="copyFunction('mail')" class="elements">ibtc.league.contact@gmail.com</span>
+            <br />
+            <br />
+            <img class="icon" src="/media/Icons/discord_white.png" alt="Discord">
+            <span id="discord" onclick="copyFunction('discord')" class="elements">ibt_cuukey</span>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+           <p> <span>Probleme </span>mit der Webseite?</p>
+            <p style="margin-top: -1.7rem; color:#a0a0a0">(Durch klicken kopieren)</p>
+            <br />
+            <img class="icon" src="/media/Icons/mail_white.png" alt="Email">
+            <span id="webmail" onclick="copyFunction('webmail')" class="elements">forceofyannick@gmail.com</span>
+            <br />
+            <br />
+            <img class="icon" src="/media/Icons/discord_white.png" alt="Discord">
+            <span id="webdiscord" onclick="copyFunction('webdiscord')" class="elements">force_of_yannick</span>
+            
+        </div>
+    </div>
+</body>
+</html>

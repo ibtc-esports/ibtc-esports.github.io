@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+    
+    <!-- ICON -->
+    <link rel="icon" type="image/x-icon" href="/media/Logos/Simplified_Logo.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/mobile/css/cookieBanner.css" />
+    <link rel="stylesheet" href="/mobile/css/navbar.css" />
+    <link rel="stylesheet" href="/mobile/css/index.css" />
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- SCRIPTS -->
+    <script src="/mobile/scripts/cookies.js"></script>
+    <script src="/mobile/scripts/index-team-grid.js"></script>
+   <!-- <script src="/mobile/scripts/index-team-results.js"></script>  -->
+    <script src="/mobile/scripts/appearance.js"></script>
+    <script src="/mobile/scripts/index.js"></script>
+
+
+    <!-- VIEWPORT CHECK -->
+    <!-- 
+        409 für Yannick
+        ab <=387 macht Socials faxen (Settla, Donni, Julia)
+        ab <=400 ist ibtc einzeln
+    -->
+    <script>
+        if (window.innerWidth > 600) { 
+            window.location.href = "/desktop/index.html"; 
+        }
+    </script>
+
+</head>
+<body>
+
+<!-- Cookies / Local Storage Banner -->
+ <div class="cookieBackground">
+<div class="cookieContainer">
+    <h2 class="cookieHeader">Bevor Sie fortfahren</h2>
+    <p class="cookieText">
+        Wir speichern Daten, um sicherzustellen, dass die Webseite einwandfrei funktioniert.
+    </p>
+    <p class="cookieText">
+        Unter anderem speichern wir Ihre Erscheinungspräferenzen (Dunkles/Helles Design)
+        sowie das Ergebnis dieser Einstellung, damit Sie, sofern Sie zustimmen, nicht jedes Mal erneut entscheiden müssen.
+    </p>
+    <div class="cookieOption">
+        <span class="cookieLabel">Ich akzeptiere das Speichern der Erscheinungspräferenz:</span>
+        <label class="switch">
+            <input type="checkbox" id="savePreference" aria-label="Erscheinungspräferenz speichern">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="cookieOption">
+        <span class="cookieLabel">Ich möchte beim nächsten Besuch erneut dieses Fenster sehen:</span>
+        <label class="switch">
+            <input type="checkbox" checked id="showCookieWindow" aria-label="Dieses Fenster erneut anzeigen">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <button class="cookieButton" type="button" onclick="saveCookies(document.getElementById('savePreference').checked, document.getElementById('showCookieWindow').checked)">Speichern</button>
+    <footer class="cookieFooter">
+        <a class="cookieA" href="/mobile/datenschutzerklärung.html">Datenschutzerklärung</a>
+        
+        <a class="cookieA" href="/mobile/impressum.html">Impressum</a>
+    </footer>
+</div>
+</div>
+
+
+ <!-- NAVBAR -->
+ <nav>
+    <div>
+        <a href="/index.html"><img class="nav-logo" src="/media/Logos/IBTC_Logo_full_clear_white.png" alt=""/></a>
+    </div>
+    
+    <div id="toggle-element">
+      <img id="toggle-image-light" class="nav-icon togglemode" onclick="loadAppearance()" title="Zu dunklem Modus wechseln" src="/media/Icons/dark-mode-svgrepo-com.png">
+    </div>
+    
+    <div class="nav-seperator">|</div>
+    
+    <div class="dropdown nav-element">
+            <button class="dropbtn">Socials
+                <i class='fa fa-caret-down'></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="https://www.instagram.com/ibt_challenger" target="_blank"><img src="/media/Icons/instagram.png" class="dropdown-content-img"/> Instagram</a>
+                <a href=" https://www.twitch.tv/ibt_challenger" target="_blank"><img src="/media/Icons/twitch.png" class="dropdown-content-img"/> Twitch</a>
+                <a href="https://www.youtube.com/@IBTChallenger" target="_blank"><img src="/media/Icons/youtube.png" class="dropdown-content-img"/> Youtube</a>
+                <a href="https://x.com/ibt_challenger" target="_blank"><img src="/media/Icons/twitter.png" class="dropdown-content-img"/> Twitter</a>
+                <a href="#"><img src="/media/Icons/tiktok.png" class="dropdown-content-img"/> <s>Tiktok (WIP)</s></a>
+                <a href="https://www.primeleague.gg/leagues/teams/175275-iron-better-than-challenger" target="_blank"><img src="/media/Icons/primeleague.png" class="dropdown-content-img"/> Prime League</a>
+            </div>
+    </div>
+    
+    <div class="nav-seperator">|</div>
+    
+    <div class="nav-element">
+        <a href="/mobile/info.html">Info</a>
+    </div>
+    
+    <div class="nav-seperator">|</div>
+    
+    <div class="nav-element">
+      <a href="/mobile/kontakt.html">Kontakt</a>
+    </div>
+  </nav>
+  
+
+
+
+
+
+    <!-- HAUPTINHALT -->
+<main>
+   <!--
+    <div class="welcome_banner">
+        <video autoplay muted loop>
+            <source src="/media/IBTC_Website_Banner.mov">
+        </video>
+    </div>
+-->
+   
+    <div>
+        <h1 class="landing-header">IBTC ESPORTS</h1>
+        <h2 class="landing-sub-header">EST. 2022</h2>
+    </div>
+   
+
+
+
+    <!-- TEAMS -->
+    <h3 class="section-header">Unsere Teams</h3>
+
+
+
+    <div class="team_grid" onmouseleave="grid_reset()">
+        <a href="/mobile/team.html?name=ibtc" class="grid-item grid-itemA" onmouseover="grid_hover('A')"></a>
+        <a href="/mobile/team.html?name=ibty" class="grid-item grid-itemB" onmouseover="grid_hover('B')"></a>
+        <a href="/mobile/team.html?name=ibtp" class="grid-item grid-itemC" onmouseover="grid_hover('C')"></a>
+        <a href="/mobile/team.html?name=ibtg" class="grid-item grid-itemD" onmouseover="grid_hover('D')"></a>
+        <a href="/mobile/team.html?name=ice" class="grid-item grid-itemE" onmouseover="grid_hover('E')"></a>
+    </div>
+ 
+<!-- AKTUELLER SPLIT -->
+<h3 class="section-header">Aktueller Split</h3>
+
+<div class="split-results" style="border: 1px solid black;">
+    <h1 class="split-header">Prime League Summer Split '24</h1>
+    <table>
+        <tr>
+            <th style="border-left: none; border-top: none;">IBTC</th>
+            <th style="border-top: none;">IBTY</th>
+            <th style="border-top: none;">IBTP</th>
+            <th style="border-right: none; border-top: none">ICE</th>
+            <th style="border-top: none;">FF</th>
+        </tr>
+        <tr>
+            <td style="border-left: none; border-top: none" id="ibtc_div">Div </td>
+            <td style="border-top: none" id="ibty_div">Div </td>
+            <td style="border-top: none" id="ibtp_div">Div </td>
+            <td style="border-right: none; border-top: none" id="ice_div" >Div </td>
+            <td style="border-top: none" id="ff_div">Div </td>
+        </tr>
+        <tr>
+            <td style="border-left: none; border-bottom: none; border-top: none" id="ibtc_rang">Rang </td>
+            <td style="border-bottom: none; border-top: none" id="ibty_rang">Rang </td>
+            <td style="border-bottom: none; border-top: none" id="ibtp_rang">Rang </td>
+            <td style="border-right: none; border-bottom: none; border-top: none" id="ice_rang" >Rang </td>
+            <td style="border-bottom: none; border-top: none" id="ff_rang">Rang </td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+<!-- LIVESTREAM -->
+<h3 class="section-header">Casting Livestream</h3>
+
+<!--
+<div class="twitch">
+
+    <div id="twitch-embed" style="border-radius: 16px;overflow: hidden;"></div>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script type="text/javascript">
+        
+    let width = window.innerWidth * 0.98; // 98% der Viewport-Breite
+    let height = Math.floor(width / 1.777777777); // Höhe im 16:9 Verhältnis, abgerundet
+
+    new Twitch.Embed("twitch-embed", {
+    width: width,
+    height: height,
+    layout: "video",
+    autoplay: "false",
+    channel: "ibt_challenger",
+    parent: ["localhost"]
+});
+    </script>
+
+</div>
+-->
+
+
+<!-- JERSEY -->
+<h3 class="section-header">Bock auf ein Jersey?</h3>
+
+<div class="jersey">
+    
+        <a href="https://teams.spized.com/ibtc">
+            <img id="jerseyImage" src="/media/Jersey/Jersey1.png"/>
+        </a>
+        
+    <script>
+        const images= [
+            "/media/Jersey/Jersey1.png",
+            "/media/Jersey/Jersey2.png",
+            "/media/Jersey/Jersey3.png",
+            "/media/Jersey/Jersey4.png"
+        ];
+        let currentIndex = 0;
+        
+        function changeImage(){
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("jerseyImage").src = images[currentIndex];
+        }
+
+        setInterval(changeImage,10000);
+        console.log("Jersey change!");
+    </script>
+</div>
+
+<br>
+</main>
+
+<footer>
+    <a href="/mobile/impressum.html" style="font-family: Bebas Neue, sans-serif;">Impressum</a>
+    <br>
+    <br>
+</footer>
+</body>
+</html>
+

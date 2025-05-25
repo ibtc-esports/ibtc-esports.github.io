@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
+    
+    <!-- ICON -->
+    <link rel="icon" type="image/x-icon" href="/media/Logos/Simplified_Logo.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/mobile/css/cookieBanner.css" />
+    <link rel="stylesheet" href="/mobile/css/navbar.css" />
+    <link rel="stylesheet" href="/mobile/css/kontakt.css" />
+    
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- SCRIPTS -->
+    <script src="/mobile/scripts/cookies.js"></script>
+    <script src="/mobile/scripts/appearance.js"></script>
+    <script src="/mobile/scripts/kontakt.js"></script>
+
+
+    <!-- VIEWPORT CHECK -->
+    <script>
+        if (window.innerWidth > 600) { 
+            window.location.href = "/desktop/kontakt.html"; 
+        }
+    </script>
+
+</head>
+<body>
+
+<!-- Cookies / Local Storage Banner -->
+<div class="cookieBackground">
+    <div class="cookieContainer">
+        <h2 class="cookieHeader">Bevor Sie fortfahren</h2>
+        <p class="cookieText">
+            Wir speichern Daten, um sicherzustellen, dass die Webseite einwandfrei funktioniert.
+        </p>
+        <p class="cookieText">
+            Unter anderem speichern wir Ihre Erscheinungspräferenzen (Dunkles/Helles Design)
+            sowie das Ergebnis dieser Einstellung, damit Sie, sofern Sie zustimmen, nicht jedes Mal erneut entscheiden müssen.
+        </p>
+        <div class="cookieOption">
+            <span class="cookieLabel">Ich akzeptiere das Speichern der Erscheinungspräferenz:</span>
+            <label class="switch">
+                <input type="checkbox" id="savePreference" aria-label="Erscheinungspräferenz speichern">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="cookieOption">
+            <span class="cookieLabel">Ich möchte beim nächsten Besuch erneut dieses Fenster sehen:</span>
+            <label class="switch">
+                <input type="checkbox" checked id="showCookieWindow" aria-label="Dieses Fenster erneut anzeigen">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <button class="cookieButton" type="button" onclick="saveCookies(document.getElementById('savePreference').checked, document.getElementById('showCookieWindow').checked)">Speichern</button>
+        <footer class="cookieFooter">
+            <a class="cookieA" href="/mobile/datenschutzerklärung.html">Datenschutzerklärung</a>
+            
+            <a class="cookieA" href="/mobile/impressum.html">Impressum</a>
+        </footer>
+    </div>
+    </div>
+
+ <!-- NAVBAR -->
+ <nav>
+    <div>
+        <a href="/index.html"><img class="nav-logo" src="/media/Logos/IBTC_Logo_full_clear_white.png" alt=""/></a>
+    </div>
+    
+    <div id="toggle-element">
+      <img id="toggle-image-light" class="nav-icon togglemode" onclick="darkApperance()" title="Zu dunklem Modus wechseln" src="/media/Icons/dark-mode-svgrepo-com.png">
+    </div>
+    
+    <div class="nav-seperator">|</div>
+    
+    <div class="dropdown nav-element">
+            <button class="dropbtn">Socials
+                <i class='fa fa-caret-down'></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="https://www.instagram.com/ibt_challenger" target="_blank"><img src="/media/Icons/instagram.png" class="dropdown-content-img"/> Instagram</a>
+                <a href=" https://www.twitch.tv/ibt_challenger" target="_blank"><img src="/media/Icons/twitch.png" class="dropdown-content-img"/> Twitch</a>
+                <a href="https://www.youtube.com/@IBTChallenger" target="_blank"><img src="/media/Icons/youtube.png" class="dropdown-content-img"/> Youtube</a>
+                <a href="https://x.com/ibt_challenger" target="_blank"><img src="/media/Icons/twitter.png" class="dropdown-content-img"/> Twitter</a>
+                <a href="#"><img src="/media/Icons/tiktok.png" class="dropdown-content-img"/> <s>Tiktok (WIP)</s></a>
+                <a href="https://www.primeleague.gg/leagues/teams/175275-iron-better-than-challenger" target="_blank"><img src="/media/Icons/primeleague.png" class="dropdown-content-img"/> Prime League</a>
+            </div>
+    </div>
+    
+    <div class="nav-seperator">|</div>
+    
+    <div class="nav-element">
+        <a href="/mobile/info.html">Info</a>
+    </div>
+    
+    <div class="nav-seperator">|</div>
+    
+    <div class="nav-element">
+      <a href="/mobile/kontakt.html">Kontakt</a>
+    </div>
+  </nav>
+
+
+    <!-- HAUPTINHALT -->
+    <div>
+        <h1 class="landing-header">KONTAKT</h1>
+    </div>
+
+    <div style="font-size: 150%; font-family: Roboto Condensed, sans-serif; text-align: center;">
+            
+        <p>Du möchstest dich als <span style="color:#cd295d">Spieler</span> bewerben oder als <span style="color:#cd295d">Sponsor</span> in Kontakt treten?</p>
+        <p style="margin-top: -1.5rem;">Dann schreib uns gerne eine <span style="color:#cd295d">E-Mail</span> oder melde dich per <span style="color:#cd295d">Discord</span>.</p>
+        <p style="margin-top: -1rem;font-size: 1.2rem;">(Durch klicken kopieren)</p>
+        <br />
+   
+            <img id="mailImg" src="/media/Icons/mail_white.png" alt="Email" style="width: 30px; height: 30px; vertical-align:middle;" >
+            <span id="mail" onclick="copyFunction('mail')" class="elements">ibtc.league.contact@gmail.com</span>
+            <br />
+            <br />   
+            <img id="discordImg" src="/media/Icons/discord_white.png" alt="Discord" style="width: 30px; height: 30px; vertical-align:middle;" >
+            <span id="discord" onclick="copyFunction('discord')" class="elements">ibt_cuukey</span>
+            
+    </div>
+
+    <br />  
+    <br />  
+    <br />  
+    <br />  
+    <br />
+    <br />  
+    <footer>
+        <a href="/mobile/impressum.html">Impressum</a>
+    </footer>
+</body>
+</html>
+
