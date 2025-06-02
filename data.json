@@ -1,4 +1,51 @@
 {
-  "Teams": {},
+  "Teams": {
+    "ibtc": {
+      "Players": {
+        "yannick": {
+          "discord-id": "332847436471074827",
+          "main-role": "top",
+          "orga-role-1": "team-leader",
+          "orga-role-2": "team-leader",
+          "instagram": "https://www.instagram.com/force_of_yannick",
+          "tiktok": "https://www.tiktok.com/@force_of_yannick",
+          "twitter": "https://x.com/forceofyannick",
+          "twitch": "https://www.twitch.tv/force_of_yannick",
+          "youtube": "https://www.youtube.com/force_of_yannick",
+          "team": "ibtc"
+        }
+      },
+      "Results": {
+        "summer'25": {
+          "kaliphase": {
+            "group": "-",
+            "result": "-"
+          },
+          "groupphase": {
+            "group": "8",
+            "result": "9:1"
+          },
+          "playoffs": {
+            "group": "-",
+            "result": "-"
+          }
+        },
+        "winter'25": {
+          "kaliphase": {
+            "group": "-",
+            "result": "-"
+          },
+          "groupphase": {
+            "group": "1",
+            "result": "1:0"
+          },
+          "playoffs": {
+            "group": "-",
+            "result": "-"
+          }
+        }
+      }
+    }
+  },
   "Unsorted": {}
 }
