@@ -28,7 +28,7 @@
 
 ## 💻 Desktop
 ### Teams:
-- Splitergebnistabellen schöner machen
+- Index split übersicht: wenn team existiert aber keinen eintrag für aktuellsten split hat, dann fehlermeldung
 ---
 
 ## 🤖 Discord Bot
