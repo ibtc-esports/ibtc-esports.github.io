@@ -23,9 +23,6 @@
   ); /* Verlaufshintergrund für die Navbar */
   backdrop-filter: blur(10px); /* Hintergrund Blur effekt für Navbar */
   z-index: 10;
-
-  /* Für absolute Zentrierung des Logos */
-  position: relative;
 }
 
 /* Stil für die linken und rechten Abschnitte der Navbar */

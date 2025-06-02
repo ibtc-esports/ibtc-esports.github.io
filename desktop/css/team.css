@@ -138,45 +138,72 @@ body {
 /*========================================================*/
 /* Team results */
 
-.collapsible {
-  width: 100%;
-  border-bottom: 1px solid green;
-}
-
-.results-container {
-  justify-content: center;
-  width: 80%;
-  border-radius: 26px;
-  padding: 20px;
-  margin: auto;
-}
-.results-header {
-  font-family: Bebas Neue, sans-serif;
-  font-size: 200%;
-}
-.results-header:hover {
-  cursor: pointer;
-  background-color: #464646;
-}
-
 .split-container {
-  margin: 0 auto;
-  margin-bottom: 10px;
-  text-align: center;
+  margin: 0 auto 16px;
   max-width: 52vw;
-  border: 1px solid red;
+  border: 1px solid #3a3a3a;
   border-radius: 16px;
   overflow: hidden;
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.collapsible {
+  width: 100%;
+  padding: 16px 0px;
+  border-bottom: 1px solid #cd295d;
+  text-align: center; /* zentriert Text */
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  background-color: #2a2a2a;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+.collapsible i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.collapsible:hover {
+  cursor: pointer;
+  background-color: #3a3a3a;
+}
+
+.results-table {
+  width: 100%;
+  margin: 0 auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  display: table;
+}
+
+.results-table td {
+  width: 33.33%;
+  text-align: center;
+  border-right: 1px solid #333;
+}
+
+.results-table td:last-child {
+  border-right: none;
 }
 
 .results-item {
-  width: auto;
-  margin-top: auto;
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 1rem;
   background-color: #161515;
+  color: white;
 }
 
 .results-item-content {
-  padding: 20px;
+  padding: 14px 20px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.results-table tr:first-child .results-item-content {
+  font-weight: bold;
+  background-color: #222;
 }

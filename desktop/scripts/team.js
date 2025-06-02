@@ -88,34 +88,35 @@ $(document).ready(function () {
 
 
           resultsContainer.append(`
-            <div class='split-container'>
-                <div class='collapsible results-header' onclick="toggleCollapse('${safeSplitName}')">
-                    ${splitName} <i id='caret-container${safeSplitName}' class='fa fa-caret-down'></i>
-                </div>
-                <table id='${safeSplitName}' class='results-table' style='display: flex; justify-content: center;'>
-                    <tr class="results-item" style="color: white">       
-                        <td class="results-item-content">Stage</td>
-                        <td class="results-item-content">Gruppe</td>
-                        <td class="results-item-content">Ergebnis</td>
-                    </tr>
-                    <tr class="results-item" style="color: white">       
-                        <td class="results-item-content">Kalibrierungsphase</td>
-                        <td class="results-item-content">${SplitInfos.kaliphase.group}</td>
-                        <td class="results-item-content">${SplitInfos.kaliphase.result}</td>
-                    </tr>
-                    <tr class="results-item" style="color: white">       
-                        <td class="results-item-content">Gruppenphase</td>
-                        <td class="results-item-content">${SplitInfos.groupphase.group}</td>
-                        <td class="results-item-content">${SplitInfos.groupphase.result}</td>
-                    </tr>
-                    <tr class="results-item" style="color: white">       
-                        <td class="results-item-content">Playoffs</td>
-                        <td class="results-item-content">${SplitInfos.playoffs.group}</td>
-                        <td class="results-item-content">${SplitInfos.playoffs.result}</td>
-                    </tr>
-                </table>
-            </div>
-        `);
+  <div class='split-container'>
+    <div class='collapsible results-header' onclick="toggleCollapse('${safeSplitName}')">
+      ${splitName} <i id='caret-container${safeSplitName}' class='fa fa-caret-down'></i>
+    </div>
+    <table id='${safeSplitName}' class='results-table'>
+      <tr class="results-item">       
+        <td class="results-item-content">Stage</td>
+        <td class="results-item-content">Gruppe</td>
+        <td class="results-item-content">Ergebnis</td>
+      </tr>
+      <tr class="results-item">       
+        <td class="results-item-content">Kalibrierungsphase</td>
+        <td class="results-item-content">${SplitInfos.kaliphase.group}</td>
+        <td class="results-item-content">${SplitInfos.kaliphase.result}</td>
+      </tr>
+      <tr class="results-item">       
+        <td class="results-item-content">Gruppenphase</td>
+        <td class="results-item-content">${SplitInfos.groupphase.group}</td>
+        <td class="results-item-content">${SplitInfos.groupphase.result}</td>
+      </tr>
+      <tr class="results-item">       
+        <td class="results-item-content">Playoffs</td>
+        <td class="results-item-content">${SplitInfos.playoffs.group}</td>
+        <td class="results-item-content">${SplitInfos.playoffs.result}</td>
+      </tr>
+    </table>
+  </div>
+`);
+
         }
 
       })
@@ -150,14 +151,12 @@ function togglePlayerDetails(player) {
 function toggleCollapse(split) {
 
   if ($(`#${split}`).css('display') == 'none') {
-    $(`#${split}`).css('display', 'flex');
+    $(`#${split}`).css('display', 'table');
     $(`#${split}`).parent().find('.collapsible').find('i').removeClass('fa-caret-right').addClass('fa-caret-down');
   }
   else {
     $(`#${split}`).css('display', 'none');
     $(`#${split}`).parent().find('.collapsible').find('i').removeClass('fa-caret-down').addClass('fa-caret-right');
   }
-
-
 }
 
