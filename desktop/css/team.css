@@ -142,7 +142,7 @@ body {
   margin: 0 auto 16px;
   max-width: 52vw;
   border: 1px solid #3a3a3a;
-  border-radius: 16px;
+  border-radius: 16px; 
   overflow: hidden;
   background-color: #1a1a1a;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);

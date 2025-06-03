@@ -3,26 +3,30 @@ const logoSize = '72.9vw';
 const logoYOffset = '39.6%';
 
 let teamNames = [];
-
+ 
 $(document).ready(() => {
   // Get results div
-  const resultsDiv = $("#splitResults");
+const resultsDiv = $(".split-container");
 
-  // Add table structure to div
-  resultsDiv.append(`
-        <h1 class="header" id="resultsHeader">TestSplit '01</h1>
-        <table class=splitResults>
-        <tr id="name"></tr>
-        <tr id="group"></tr>
-        <tr id="result"></tr>
-        </table>
-        `);
+resultsDiv.append(`
+  <div class='split-container'>
+    <div class='results-header' id='resultsHeader'>
+      -
+    </div>
+    <table class='results-table'>
+      <tr class="results-item" id="nameRow"></tr>
+      <tr class="results-item" id="groupRow"></tr>
+      <tr class="results-item" id="resultRow"></tr>
+    </table>
+  </div>
+`);
+
 
   // Get json
   fetch("../data.json")
     .then((response) => response.json())
     .then((jsonData) => {
-      let teamNames = Object.keys(jsonData.Teams);
+      teamNames = Object.keys(jsonData.Teams);
 
       const seasonsPriority = ["winter", "summer", "spring"];
 
@@ -35,7 +39,7 @@ $(document).ready(() => {
         // alle Split-Namen des aktuellen Teams
         let teamResults = Object.keys(jsonData.Teams[teamName].Results);
 
-        // finde das größte Jahr (letzte 2 Zeichen)
+        // finde das aktuellste Jahr (letzte 2 Zeichen)
         let newestSplitYear = 0;
         for (let i = 0; i < teamResults.length; i++) {
           const year = parseInt(teamResults[i].slice(-2), 10);
@@ -89,48 +93,40 @@ $(document).ready(() => {
       console.log("Der insgesamt aktuellste Split ist:", overallNewestSplit);
 
 
-      // Tabelle bauen
-      //...
+      // Tabelle bauen:
+      // header
+       $("#resultsHeader").text(overallNewestSplit);
 
+      // gehe durch alle teams
+      for (let j = 0; j < teamNames.length; j++) {
+        const team = teamNames[j];
+        const jsonTeam = jsonData.Teams[team];
+        console.log("team",team);
+       
+        // aktuellster split existiert in team
+        if (jsonTeam.Results[overallNewestSplit]) {
+          // fülle tabelle mit inhalt
+          const resultData = jsonTeam.Results[overallNewestSplit];
+          const group = resultData.groupphase.group;
+          const result = resultData.groupphase.result;
+         
+         $("#nameRow").append(`<td class="results-item-content">${team.toUpperCase()}</td>`);
+         $("#groupRow").append(`<td class="results-item-content">Gruppe ${group}</td>`);
+         $("#resultRow").append(`<td class="results-item-content">${result}</td>`);
 
+        }
+        // aktuellster split exisitert nicht in team
+        else {
+          // fülle tabelle mit "-"
+         $("#nameRow").append(`<td class="results-item-content">${team.toUpperCase()}</td>`);
+         $("#groupRow").append(`<td class="results-item-content">-</td>`);
+         $("#resultRow").append(`<td class="results-item-content">-</td>`);
 
+        }
+      }
 
       for (let i = 0; i < teamNames.length; i++) {
         const team = teamNames[i];
-        const jsonTeam = jsonData.Teams[team];
-
-        const splits = Object.keys(jsonTeam.Results);
-
-        /*
-
-        gehe durch alle teams
-        finde einträge mit höchter zahl
-        suche dann in diesen maximal 3 einträgen nach:
-        spring
-        summer
-        winter
-        wobei spring das frühste und winter das späteste in einem jahr ist
-
-        vergleiche aktuellste splits aller teams
-        wähle daraus nach gleichem prinzip wieder den aktuellsten
-
-        für zugriff später:
-        wenn ein team den split nicht hat, dann "ghost split" für webseite anlegen,
-        alles mit "-" füllen aber nicht in json speichern
-
-        */
-        const latestSplit = splits[splits.length - 1];
-
-
-
-        const resultData = jsonTeam.Results[latestSplit];
-        const group = resultData.groupphase.group;
-        const result = resultData.groupphase.result;
-
-        $("#resultsHeader").text(latestSplit);
-        $("#name").append(`<th>${team.toUpperCase()}</th>`);
-        $("#group").append(`<th>Gruppe ${group}</th>`);
-        $("#result").append(`<th>${result}</th>`);
 
         // Decide if first/last element or not
         let borderRadius = "0px 0px 0px 0px";
@@ -153,8 +149,7 @@ $(document).ready(() => {
                     data-index="${i}" 
                     onmouseover="gridItem(this)"
                     onmouseleave="gridReset()"
-                    style="max-height: 35vh; border-radius: ${borderRadius}; background-image: url('${logoPath}'); background-size: ${logoSize}; background-position: ${offsetX} ${logoYOffset}; display: flex; justify-content: center; align-items: flex-end; color: white; text-decoration: none; text-align: center; padding-bottom: 10%;"
->
+                    style="max-height: 35vh; border-radius: ${borderRadius}; background-image: url('${logoPath}'); background-size: ${logoSize}; background-position: ${offsetX} ${logoYOffset}; display: flex; justify-content: center; align-items: flex-end; color: white; text-decoration: none; text-align: center; padding-bottom: 10%;">
                     ${team.toUpperCase()}</a>
     `);
       }

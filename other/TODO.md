@@ -27,28 +27,12 @@
 ---
 
 ## 💻 Desktop
-### Teams:
-- Index split übersicht: wenn team existiert aber keinen eintrag für aktuellsten split hat, dann fehlermeldung
 ---
 
 ## 🤖 Discord Bot
-- (autocomplete bei spieler auswahl für team erstellung)
-- (autocomplete bei team auswahl für spieler editierung/erstellung)
-
 ---
 
 ## 🌐 Links
-
-### 📢 Social Media:
-- [📺 YouTube](https://www.youtube.com/@IBTChallenger)  
-- [📷 Instagram](https://www.instagram.com/ibt_challenger)  
-- [✖️ X (Twitter)](https://x.com/ibt_challenger)  
-- [🎮 Twitch](https://www.twitch.tv/ibt_challenger)  
-
-### 🏆 League:
-- [Prime League Teamseite](https://www.primeleague.gg/leagues/teams/175275-iron-better-than-challenger)
-
-### ⚖️ Rechtliche Quellen:
 - [🍪 Cookies/Local Storage](https://www.datenschutz.org/cookie-banner/)  
 - [⚖️ Impressum](https://www.gesetze-im-internet.de/ddg/__5.html)
 - [🔍 Datenschutzhinweis](https://www.ldi.nrw.de/datenschutz/medien-und-technik/websites-muster-fuer-datenschutzhinweise)
